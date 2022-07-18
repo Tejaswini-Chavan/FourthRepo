@@ -30,7 +30,7 @@ jobs:
             ./cc-test-reporter before-build
             #sudo vendor/bin/phpunit --coverage-clover clover.xml
             #cd ./XmartApp/XmartApp
-            mvn -f ./XmartApp/XmartApp/pom.xml test
+            mvn -f ./XmartApp/pom.xml test
       - store_artifacts:
           path: target 
       - run:
