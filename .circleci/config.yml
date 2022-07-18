@@ -7,7 +7,7 @@ version: 2.1
 jobs:
   build:
     environment:
-      CC_TEST_REPORTER_ID:bda25e425dfb5fd8d22840878489d5a8e44113adc32b45ea672e348fd63b0140 
+      CC_TEST_REPORTER_ID: bda25e425dfb5fd8d22840878489d5a8e44113adc32b45ea672e348fd63b0140 
     docker:
       - image: "cimg/openjdk:11.0-browsers"
     working_directory: ~/repo
