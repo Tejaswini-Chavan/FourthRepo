@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+XmartApp,com.demo.xmartapp.entity,CustomerEntity,0,39,0,0,0,16,0,11,0,11
+XmartApp,com.demo.xmartapp.controller,CustomerApi,22,3,0,0,6,1,5,1,5,1
+XmartApp,com.demo.xmartapp.service,CustomerServiceImpl,2,117,5,5,1,28,5,5,0,5
+XmartApp,com.demo.xmartapp,XmartAppApplication,5,3,0,0,2,1,1,1,1,1
+XmartApp,com.demo.xmartapp.dto,CustomerDTO,0,39,0,0,0,16,0,11,0,11
+XmartApp,com.demo.xmartapp.exception,XmartException,4,0,0,0,2,0,1,0,1,0
