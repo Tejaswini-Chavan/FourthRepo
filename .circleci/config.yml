@@ -40,7 +40,7 @@ jobs:
             JACOCO_SOURCE_PATH=/home/circleci/repo/XmartApp/src/main/java ./cc-test-reporter \
               format-coverage XmartApp/target/my-reports/jacoco.xml     \
               --input-type jacoco \
-              --add-prefix XmartApp/XmartApp
+              #--add-prefix XmartApp/XmartApp
             ./cc-test-reporter upload-coverage
 
 # Invoke jobs via workflows
