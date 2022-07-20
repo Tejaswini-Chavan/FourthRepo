@@ -25,12 +25,15 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public CustomerEntity registerNewCustomer(CustomerDTO customerDTO) {
 
-			CustomerEntity customerEntity = new CustomerEntity();
-			customerEntity.setEmailId(customerDTO.getEmailId());
-			customerEntity.setAddress(customerDTO.getAddress());
-			customerEntity.setPassword(customerDTO.getPassword());
-			customerEntity.setName(customerDTO.getName());
-			customerEntity.setPhoneNumber(customerDTO.getPhoneNumber());
+		/*
+		 * CustomerEntity customerEntity = new CustomerEntity();
+		 * customerEntity.setEmailId(customerDTO.getEmailId());
+		 * customerEntity.setAddress(customerDTO.getAddress());
+		 * customerEntity.setPassword(customerDTO.getPassword());
+		 * customerEntity.setName(customerDTO.getName());
+		 * customerEntity.setPhoneNumber(customerDTO.getPhoneNumber());
+		 */
+    	CustomerEntity customerEntity = new CustomerEntity(customerDTO);
 			return customerRepositoryImpl.save(customerEntity);
 
     }
@@ -44,18 +47,20 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public CustomerEntity updatePassword(CustomerDTO customerDTO) {
-		CustomerEntity customerEntity = new CustomerEntity();
-		customerEntity.setEmailId(customerDTO.getEmailId());
-		customerEntity.setAddress(customerDTO.getAddress());
-		customerEntity.setPassword(customerDTO.getPassword());
-		customerEntity.setName(customerDTO.getName());
-		customerEntity.setPhoneNumber(customerDTO.getPhoneNumber());
+		CustomerEntity customerEntity = new CustomerEntity(customerDTO);
+		/*
+		 * customerEntity.setEmailId(customerDTO.getEmailId());
+		 * customerEntity.setAddress(customerDTO.getAddress());
+		 * customerEntity.setPassword(customerDTO.getPassword());
+		 * customerEntity.setName(customerDTO.getName());
+		 * customerEntity.setPhoneNumber(customerDTO.getPhoneNumber());
+		 */
 		String id= customerDTO.getEmailId();
 
 		if(id !=null &&  !("".equals(id)))
 		{
 			Optional<CustomerEntity> opt = customerRepositoryImpl.findById(id);
-			CustomerEntity customerEntityBody = new CustomerEntity();
+			CustomerEntity customerEntityBody = new CustomerEntity(customerDTO);
 			if(opt.isPresent())
 				customerEntityBody = opt.get();
 

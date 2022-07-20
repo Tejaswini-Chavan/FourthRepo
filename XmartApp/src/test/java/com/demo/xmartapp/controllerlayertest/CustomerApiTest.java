@@ -2,6 +2,7 @@ package com.demo.xmartapp.controllerlayertest;
 
 
 import com.demo.xmartapp.controller.CustomerApi;
+import com.demo.xmartapp.dto.CustomerDTO;
 import com.demo.xmartapp.entity.CustomerEntity;
 import com.demo.xmartapp.service.CustomerServiceImpl;
 import org.junit.jupiter.api.Assertions;
@@ -42,19 +43,34 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
     @BeforeEach()
     void init()
     {
-        customerEntity = new CustomerEntity();
-        customerEntity.setEmailId("akshay@gmail.com");
-        customerEntity.setName("Akshay");
-        customerEntity.setPassword("Akshay@59");
-        customerEntity.setAddress("Pune");
-        customerEntity.setPhoneNumber("9874563210");
+		/*
+		 * customerEntity = new CustomerEntity();
+		 * customerEntity.setEmailId("akshay@gmail.com");
+		 * customerEntity.setName("Akshay"); customerEntity.setPassword("Akshay@59");
+		 * customerEntity.setAddress("Pune");
+		 * customerEntity.setPhoneNumber("9874563210");
+		 * 
+		 * CustomerEntity customerEntity1 = new CustomerEntity();
+		 * customerEntity1.setEmailId("Hemant@gmail.com");
+		 * customerEntity1.setName("Hemant"); customerEntity1.setPassword("Hemant@59");
+		 * customerEntity1.setAddress("Pune");
+		 * customerEntity1.setPhoneNumber("8874563210");
+		 */
+    	CustomerDTO dto = new CustomerDTO();
 
-       CustomerEntity customerEntity1 = new CustomerEntity();
-        customerEntity1.setEmailId("Hemant@gmail.com");
-        customerEntity1.setName("Hemant");
-        customerEntity1.setPassword("Hemant@59");
-        customerEntity1.setAddress("Pune");
-        customerEntity1.setPhoneNumber("8874563210");
+		dto.setEmailId("akshay@gmail.com");
+		dto.setName("Akshay");
+		dto.setPassword("Akshay@59");
+		dto.setAddress("Pune");
+		dto.setPhoneNumber("9874563210");
+		customerEntity = new CustomerEntity(dto);
+		CustomerDTO dto1 = new CustomerDTO();
+		dto1.setEmailId("Hemant@gmail.com");
+		dto1.setName("Hemant");
+		dto1.setPassword("Hemant@59");
+		dto1.setAddress("Pune");
+		dto1.setPhoneNumber("8874563210");
+		CustomerEntity customerEntity1 = new CustomerEntity(dto1);
         customerEntityList.add(customerEntity1);
         customerEntityList.add(customerEntity);
 

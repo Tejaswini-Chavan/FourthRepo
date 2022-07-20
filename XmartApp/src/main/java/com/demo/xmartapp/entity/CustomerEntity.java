@@ -9,6 +9,8 @@ import javax.validation.constraints.Size;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.demo.xmartapp.dto.CustomerDTO;
+
 @Entity
 @Validated
 public class CustomerEntity {
@@ -65,5 +67,19 @@ public class CustomerEntity {
     public void setAddress(String address) {
         this.address = address;
     }
+    
+	
+	  public CustomerEntity() {
+	  
+	  }
+	 
+    
+	public CustomerEntity(CustomerDTO customerDTO) {
+		this.setEmailId(customerDTO.getEmailId());
+		this.setAddress(customerDTO.getAddress());
+		this.setPassword(customerDTO.getPassword());
+		this.setName(customerDTO.getName());
+		this.setPhoneNumber(customerDTO.getPhoneNumber());
+	}
 
 }

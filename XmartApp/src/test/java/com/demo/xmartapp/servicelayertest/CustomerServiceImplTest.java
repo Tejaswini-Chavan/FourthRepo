@@ -32,18 +32,27 @@ class CustomerServiceImplTest {
     @BeforeEach()
     void init()
     {
-        customerEntity = new CustomerEntity();
-        customerEntity.setEmailId("akshada@gmail.com");
-        customerEntity.setName("Akshada");
-        customerEntity.setPassword("Akshada@59");
-        customerEntity.setAddress("Pune");
-        customerEntity.setPhoneNumber("9874563220");
-        customerDTO = new CustomerDTO();
-        customerDTO.setName(customerEntity.getName());
-        customerDTO.setAddress(customerEntity.getAddress());
-        customerDTO.setPassword(customerEntity.getPassword());
-        customerDTO.setEmailId(customerEntity.getEmailId());
-        customerDTO.setPhoneNumber(customerEntity.getPhoneNumber());
+		/*
+		 * customerEntity = new CustomerEntity();
+		 * customerEntity.setEmailId("akshada@gmail.com");
+		 * customerEntity.setName("Akshada"); customerEntity.setPassword("Akshada@59");
+		 * customerEntity.setAddress("Pune");
+		 * customerEntity.setPhoneNumber("9874563220"); customerDTO = new CustomerDTO();
+		 * customerDTO.setName(customerEntity.getName());
+		 * customerDTO.setAddress(customerEntity.getAddress());
+		 * customerDTO.setPassword(customerEntity.getPassword());
+		 * customerDTO.setEmailId(customerEntity.getEmailId());
+		 * customerDTO.setPhoneNumber(customerEntity.getPhoneNumber());
+		 */
+    	
+    	customerDTO = new CustomerDTO();
+		customerDTO.setName("Akshada");
+		customerDTO.setAddress("Pune");
+		customerDTO.setPassword("Akshada@59");
+		customerDTO.setEmailId("akshada@gmail.com");
+		customerDTO.setPhoneNumber("9874563220");
+		customerEntity = new CustomerEntity(customerDTO);
+		
         Assertions.assertDoesNotThrow(this::doNotThrowException);
     }
 
@@ -72,12 +81,22 @@ class CustomerServiceImplTest {
     void fetchCustomerListTest()
     {
         List<CustomerEntity> customerEntityList =new ArrayList<>();
-        CustomerEntity customerEntity1 =new CustomerEntity();
-        customerEntity1.setEmailId("hemant@gmail.com");
-        customerEntity1.setName("Hemant");
-        customerEntity1.setPassword("Hemant@59");
-        customerEntity1.setAddress("Pune");
-        customerEntity1.setPhoneNumber("8874563220");
+		/*
+		 * CustomerEntity customerEntity1 =new CustomerEntity();
+		 * customerEntity1.setEmailId("hemant@gmail.com");
+		 * customerEntity1.setName("Hemant"); customerEntity1.setPassword("Hemant@59");
+		 * customerEntity1.setAddress("Pune");
+		 * customerEntity1.setPhoneNumber("8874563220");
+		 */
+        
+        CustomerDTO customerDTO1 = new CustomerDTO();
+		customerDTO1.setEmailId("hemant@gmail.com");
+		customerDTO1.setName("Hemant");
+		customerDTO1.setPassword("Hemant@59");
+		customerDTO1.setAddress("Pune");
+		customerDTO1.setPhoneNumber("8874563220");
+		CustomerEntity customerEntity1 = new CustomerEntity(customerDTO1);
+		
         customerEntityList.add(customerEntity1);
         customerEntityList.add(customerEntity);
 
